@@ -1,0 +1,9 @@
+CREATE TABLE tblMercadorias(
+    	colId INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    	colCod BIGINT NOT NULL,
+    	codTpMerc VARCHAR(30) NOT NULL,
+    	colNome VARCHAR(30) NOT NULL,
+    	colQtd SMALLINT NOT NULL,
+    	colPreco REAL(5, 2) NOT NULL,
+    	colTpNegocio VARCHAR(10) NOT NULL
+    );
