@@ -1,9 +1,9 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php 
 
 function fRel($strSql){
 	//Conectando ao banco de dados
-	require_once('conexao/config.inc');
+	require_once('conexao/config.php');
 	
 	//Cria cabecalho tabela 
 	echo "
