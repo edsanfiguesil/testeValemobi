@@ -5,7 +5,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<link href="../css/estilo.css" rel="stylesheet" type="text/css" media="all" />
-
+	    <script src="../js/validacoes.js" type="text/javascript"></script>
+	    
 	</head>
 
 	<body>
@@ -16,7 +17,7 @@
 				</div>
 					<p><input type="text" name="tfCod" placeholder="Código" />
 					<input type="text" name="tfTipo" placeholder="Tipo" /></p>
-					<p><input type="text" name="tfNome" placeholder="Nome"></p>
+					<p><input type="text" name="tfNome" placeholder="Descrição"></p>
 					<p><input type="text" name="tfQtd" placeholder="Quantidade" style="width: 46%;">
 					<input type="text" name="tfPreco" placeholder="Preço (R$)" style="width: 46%;"></p>
 
@@ -27,7 +28,7 @@
 					</fieldset>
 
 					<p>
-						<input type="submit" name="btSave" value="" style="background-image: url('../img/add.png'); background-repeat: no-repeat; background-size: cover;">
+						<input type="button" name="btSave" value="" onClick="fSubmeter()" style="background-image: url('../img/add.png'); background-repeat: no-repeat; background-size: cover;">
 						<input type="reset" name="btCancel" value="" style="background-image: url('../img/canc.png'); background-repeat: no-repeat; background-size: cover;" >
 						<input type="button" name="btRel" value="" onclick="pgRel()" style="background-image: url('../img/rel.png'); background-repeat: no-repeat; background-size: cover;" >
 					</p>

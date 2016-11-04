@@ -28,7 +28,7 @@
 						//$sqlIns = "SELECT * FROM tblmercadorias ORDER BY colId DESC LIMIT 50";
 						$sqlIns = "SELECT * FROM tblmercadorias WHERE colNome LIKE '%" .$vlrFiltro. "%' OR colCod LIKE '%".$vlrFiltro."%' ORDER BY colId DESC LIMIT 50";
 
-						//Chama a função: fCad, enviando-lhe a string de inserção
+						//Chama a função: fRel, enviando-lhe a string de consulta
 						fRel($sqlIns);
 
 					?>
@@ -36,26 +36,4 @@
 			</div>
 		</form>
 	</body>
-
-	<!--<?php 
-			if (!empty($_POST['tfCod']) && !empty($_POST['tfTipo']) && !empty($_POST['tfNome']) && !empty($_POST['tfQtd']) && !empty($_POST['tfPreco'])){
-
-				$codigo = $_POST['tfCod'];
-				$tipo = $_POST['tfTipo'];
-				$nome = $_POST['tfNome'];
-				$qtd = $_POST['tfQtd'];
-				$preco = $_POST['tfPreco'];
-				$negocio = $_POST['tpNegocio'];
-
-				//Conecta-se ao arquivo que contém a função de cadastro
-				require_once("../back_end/cadastro.php");
-
-				//Variável que contém a string: Inserir registro no banco de dados
-				$sqlIns = "INSERT INTO tblmercadorias (colCod, codTpMerc, colNome, colQtd, colPreco, colTpNegocio) VALUES ($codigo, '$tipo', '$nome', $qtd, $preco, '$negocio')";
-
-				//Chama a função: fCad, enviando-lhe a string de inserção
-				fCad($sqlIns);
-
-			}
-		?> -->
 </html>
