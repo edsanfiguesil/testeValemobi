@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestão de Mercadoria&reg;</title>
+        <meta name="copyright" content="Eduardo dos Santos"> 
+        <meta name="description" content="Desenvolvido para facilitar eficazmente a gestão de mercadorias de sua empresa!!!">
+        <meta name="keywords" content="Gestão, Mercadorias, Gestão de Mercadorias">
+        <meta name="news_keywords" content="Gestão, Mercadorias, Gestão de Mercadorias">
+		<meta name="robots" content="all">
+        <meta name="distribution" content="global">
+        <meta name="generator" content="Dreamweaver">
+        <meta name="language" content="Portuguese">
+        <meta name="rating" content="general">
+        <meta name="author" content="Eduardo dos Santos">
+        <meta name="web_author" content="Eduardo dos Santos">
+        <meta name="contact" content="edsanfiguesil@yahoo.com.br" />
+        <meta name="reply-to" content="edsanfiguesil@yahoo.com.br">
+
+        <!-- FOLHAS DE ESTILO DA PÁGINA -->
+        <link rel="stylesheet" href="css/frameworks/icons.css">
+        <link rel="stylesheet" href="css/frameworks/materialize.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/frameworks/font-awesome/css/font-awesome.min.css">
+
+        <link rel="icon" href="img/logo.png">
+
+        
+    </head>
+    <body onload="list_all()"> 
+        <header class="header">
+            <nav class="deep-purple darken-3">
+                <div class="container nav-wrapper">
+                    <a href="index.html" class="logo"></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="#modal-cadastro" onclick="clean()">Cadastro</a></li>
+                        <li><a href="#modal-login">Area Restrita</a></li>
+                    </ul>
+                    <ul class="side-nav " id="mobile-demo">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="#modal-cadastro" onclick="clean()">Cadastro</a></li>
+                        <li><a href="#modal-login">Area Restrita</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="row container  white-text">
+                <div class="col s12 deep-purple darken-3">
+                    <h3>Mercadorias</h3>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">search</i>
+                                <input id="txtSearch" type="text" class="validate">
+                                <label for="txtSearch">Filtrar por:</label>
+                                <a class="waves-effect waves-light btn deep-purple darken-4" onclick="list_all()">Buscar</a>
+                                <span id="view-spinner"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+<!-- ***************************INÍCIO - CARREGA OS LAVA-RÁPIDOS************************************** -->
+                <div class="col s12 deep-purple darken-3" id="resultados"></div>
+<!-- ***************************FIM - CARREGA OS LAVA-RÁPIDOS************************************** -->
+
+
+            </div>
+        </main>
+
+        <footer class="page-footer deep-purple darken-3">
+        
+            <div class="container">
+                <div class="row">
+
+                <div class="col l6 s12">
+                    <h5 class="white-text">Gestão de Mercadorias</h5>
+                    <section class="newsletter deep-purple darken-1">
+                        <h2>Inscreva-se agora! </h2>
+                        <h3>Receba novidades, dicas e muito mais.</h3>
+                        <div class="input-field col s12 ">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="txtNomeNews" type="text" class="validate">
+                                <label for="txtNomeNews">Nome *</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="txtEmailNews" type="email" class="validate">
+                                <label for="txtEmailNews">Email *</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <h5 id="msgNews"></h5>
+                                <button class="waves-effect waves-light btn-large left deep-purple darken-3" onclick="addNewsletter()">Cadastrar</button>
+                            </div>
+                    </section>
+
+                </div>
+
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Sobre o Desenvolvedor</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="http://linkedin.com/in/sanfig" target="_blank">Linkedin</a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://facebook.com/Edsanfiguesil" target="_blank">Facebook</a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://trampos.co/eduardo-santos" target="_blank">Trampos.co</a></li>
+                    </ul>
+
+                </div>
+
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    &copy; 2017 Eduardo dos Santos
+                </div>
+            </div>
+
+
+<!-- ***************************INÍCIO - MODAL LOGIN**************************************-->
+            <div id="modal-login" class="modal modal-fixed-footer black-text">
+                    <div class="modal-content">
+                        <h4>Login</h4>
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="txtEmail" type="email" class="validate">
+                                    <label for="txtEmail">Email *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">vpn_key</i>
+                                    <input id="txtPwd" type="password" class="validate">
+                                    <label for="txtPwd">Senha *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <span id="view-spinner-login"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="modal-action waves-effect waves-green btn-flat deep-purple accent-4 ">Redefinir Senha</button>
+                        <a href="cadastro-acesso.html" target="_blank" class="waves-effect waves-green btn-flat deep-purple accent-4 ">Cadastrar</a>
+                        <button class="modal-action modal-close waves-effect waves-green btn-flat deep-purple accent-4 ">Cancelar</button>
+                        <button class="modal-action waves-effect waves-white btn-flat deep-purple accent-4 " id="btnLogin" onclick="login()">Login</button>
+                    </div>
+                </div>
+<!-- ***************************FIM - MODAL LOGIN**************************************-->
+
+<!-- ***************************INÍCIO - MODAL CADASTRO**************************************-->
+            <div id="modal-cadastro" class="modal modal-fixed-footer black-text">
+                    <div class="modal-content">
+                        <h3>Cadastro</h3>
+                        <h4 id="acao">Você está inserido um novo registro!!!</h4>
+                        <form class="col s12">
+                            <div class="row">
+                                <input type="hidden" id="idUpdt" value="">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">shopping_cart</i>
+                                    <input id="txtTipoMerc" type="text" class="validate">
+                                    <label for="txtTipoMerc">Categoria *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">shopping_cart</i>
+                                    <input id="txtDescricao" type="text" class="validate">
+                                    <label for="txtDescricao">Descrição *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">shopping_cart</i>
+                                    <input id="txtQtd" type="number" class="validate">
+                                    <label for="txtQtd">Quantidade *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">shopping_cart</i>
+                                    <input id="txtPreco" type="number">
+                                    <label for="txtPreco">Preço *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <p><span>Tipo de Negócio</span></p>
+                                    
+                                    <input name="tp_negocio" type="radio" id="rbVenda" value="Venda" checked  />
+                                    <label for="rbVenda">Venda</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input name="tp_negocio" type="radio" id="rbCompra" value="Compra"  />
+                                    <label for="rbCompra">Compra</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <span id="view-spinner-login"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="modal-action modal-close waves-effect waves-green btn-flat deep-purple accent-4  white-text" onclick="clean()">Cancelar</button>
+                        <button class="modal-action waves-effect waves-white btn-flat deep-purple accent-4  white-text" id="btnSalvar" onclick="save()">Salvar</button>
+                    </div>
+                </div>
+<!-- ***************************FIM - MODAL CADASTRO**************************************-->
+
+        </footer>
+
+<!-- ************************SCRIPTS DA PÁGINA******************************************* -->
+        <script src="js/frameworks/jquery-3.1.1.min.js"></script>
+        <script src="js/frameworks/materialize.min.js"></script> 
+        <script src="js/default.js"></script>
+        <script src="js/acoes_mercadorias.js"></script>
+    </body>
+</html>

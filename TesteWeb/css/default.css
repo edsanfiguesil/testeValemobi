@@ -1,0 +1,80 @@
+html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+img{max-width: 100%;}
+
+.logo{ 
+    width: 96px; 
+    height: 96px; 
+    float: left; 
+    background: url('../img/logo.png') center center/96px no-repeat; 
+    border-radius: 96px;
+    box-shadow: 0 0 6px #000;
+    font-size: 0;
+}
+
+
+#acao{
+    max-width: 280px;
+    margin: 10px auto;
+    background: #500;
+    color: #ff0;
+    font-size: 1.3em;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/*=========================================NEWSLETTER==================================================================*/
+.newsletter{ width:100%; float: left; text-align: center; padding: 0 0 20px 0; border-radius: 5px; }
+.newsletter h2{ font-size: 2em; color: #fff; font-weight: 700; }
+.newsletter h3{ font-size: 1.1em; color: #fff; }
+.newsletter input{ width: 100%; }
+
+
+
+
+
+
+/*=========================================SMALL DEVICES - SMARTIPHONES==================================================================*/
+@media screen and (min-width: 480px){
+	
+}
+
+/*=========================================SMALL DEVICES - TABLETS=========================================================================*/
+@media screen and (min-width: 768px){
+	
+}
+/*=========================================MEDIUM DEVICES - TABLETS & DESKTOPS=============================================================*/
+@media screen and (min-width: 820px){
+	
+}
+@media screen and (min-width: 860px){
+	
+}
+@media screen and (min-width: 910px){
+	
+}
+@media screen and (min-width: 960px){
+		
+}
+@media screen and (min-width: 1024px){
+	
+}
+@media screen and (min-width: 1140px){
+	
+}
+@media screen and (min-width: 1200px){
+	
+}
+@media screen and (min-width: 1280px){
+	
+}
+@media screen and (min-width: 1380px){
+	
+}
+@media screen and (min-width: 1680px){
+	
+}
